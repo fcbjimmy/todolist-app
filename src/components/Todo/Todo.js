@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Input from "../Input/Input";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import { style } from "@mui/system";
 
 function Todo(props) {
   const [edit, setEdit] = useState({
@@ -12,12 +11,6 @@ function Todo(props) {
     value: "",
     isCompleted: null,
   });
-
-  const commonStyles = {
-    bgcolor: "background.paper",
-    borderColor: "text.primary",
-    border: 1,
-  };
 
   // const todoStyle = props.isCompleted
   //   ? { padding: "0 27px 0 0", textDecoration: "line-through" }
