@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Avatar,
-  Button,
-  Grid,
-  Paper,
-  TextField,
-  Typography,
-  FormControl,
-} from "@mui/material";
+import { Button, TextField, FormControl } from "@mui/material";
 
 function Input(props) {
   const [todo, setTodo] = useState(props.edit ? props.edit.value : "");
@@ -19,7 +11,7 @@ function Input(props) {
     e.preventDefault();
     const data = {
       task: todo,
-      id: Math.floor(Math.random() * 1000),
+      id: Date.now(),
       isCompleted: false,
     };
     props.edit ? props.onSubmit(todo) : props.onAddtodo(data);
@@ -32,9 +24,15 @@ function Input(props) {
         <label htmlFor="todo"></label>
         {props.edit ? (
           <>
-            <TextField label="" onChange={handleInputChange} />
+            <TextField
+              label=""
+              value={todo}
+              onChange={handleInputChange}
+              size="small"
+              sx={{ mt: 2 }}
+            />
             <Button
-              style={{ marginTop: 10 }}
+              sx={{ mt: 1.5 }}
               color="primary"
               variant="contained"
               type="submit"
@@ -52,7 +50,7 @@ function Input(props) {
               required
             ></TextField>
             <Button
-              style={{ marginTop: 10 }}
+              sx={{ mt: 1.5 }}
               color="primary"
               variant="contained"
               type="submit"

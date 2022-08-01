@@ -6,19 +6,17 @@ function TodosList(props) {
 
   return (
     <div>
-      <ul>
-        {props.todos.map((todo) => (
-          <Todo
-            updateToDo={props.onUpdateToDo}
-            deleteToDo={props.onDeleteToDo}
-            key={todo.id}
-            id={todo.id}
-            todo={todo.task}
-            isCompleted={todo.isCompleted}
-            CheckToDo={props.onCheckToDo}
-          />
-        ))}
-      </ul>
+      {props.todos.map((todo) => (
+        <Todo
+          updateToDo={props.onUpdateToDo}
+          deleteToDo={props.onDeleteToDo}
+          key={todo.id}
+          id={todo.id}
+          todo={todo.task}
+          isCompleted={todo.isCompleted}
+          CheckToDo={props.onCheckToDo}
+        />
+      ))}
     </div>
   );
 }

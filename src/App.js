@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import Input from "./components/Input/Input";
 import TodosList from "./components/TodosList/TodosList";
 import { Paper, Typography } from "@mui/material";
+
+const paperStyle = {
+  padding: "50px",
+  width: "500px",
+  height: "auto",
+  margin: "0 auto",
+};
 
 function App() {
   const [todos, setTodos] = useState(() => {
@@ -13,18 +19,9 @@ function App() {
     return [];
   });
 
-  console.log(todos);
-
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
-  const paperStyle = {
-    padding: "50px",
-    width: "500px",
-    height: "auto",
-    margin: "0 auto",
-  };
 
   function addTodo(newtodo) {
     if (!newtodo.task || /^\s*$/.test(newtodo.task)) {
@@ -69,7 +66,6 @@ function App() {
     });
     setTodos(todoCheck);
   }
-  console.log(todos);
 
   return (
     <Paper style={paperStyle} elevation="1">
