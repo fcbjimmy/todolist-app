@@ -4,7 +4,7 @@ Able to add, edit, delete and cross tasks.
 
 Technologies used:
 
-Javascript
+JavaScript
 HTML 
 CSS 
 React
