@@ -1,5 +1,7 @@
 # Todo List
 
+Able to add, edit, delete and cross tasks.
+
 Technologies used:
 
 Javascript
